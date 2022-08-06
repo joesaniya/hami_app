@@ -220,7 +220,13 @@ class _SearchCompaniesState extends State<SearchCompanies> {
               child: Text
               (
                 'Oops!!,Sorry No Partner Companie\'s Found',
-                style: TextStyle(fontSize: 17,fontFamily: 'inter',fontWeight: FontWeight.bold),
+                style: TextStyle
+                (
+                  fontSize: 17,
+                  fontFamily: 'inter',
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
+                ),
               ),
             ),
           )

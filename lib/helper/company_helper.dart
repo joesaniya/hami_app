@@ -33,7 +33,7 @@ var CompanySearchResultRawData=
 
   //3
   {
-    'image':'	https://cryptologos.cc/logos/terra-luna-luna-logo.png',
+    'image':'https://cryptologos.cc/logos/terra-luna-luna-logo.png',
     'title':'Terra Classic',
     'Subtitle':'LUNC',
     'number':'#12'

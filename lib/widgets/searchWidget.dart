@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:trading_demo/models/company.dart';
 
@@ -30,9 +31,32 @@ class CompanyTile extends StatelessWidget {
           (
             children: 
             [
+//               CachedNetworkImage(
+//   // imageUrl: "http://via.placeholder.com/200x150",
+//   imageUrl: data.image,
+//   imageBuilder: (context, imageProvider) => Container(
+//     decoration: BoxDecoration(
+//       image: DecorationImage(
+//           image: imageProvider,
+//           fit: BoxFit.cover,
+//           // colorFilter:
+//           //     ColorFilter.mode(Colors.red, BlendMode.colorBurn)
+//               ),
+//     ),
+//   ),
+//   placeholder: (context, url) => CircularProgressIndicator
+//   (
+//     // color: Appcolor.darkviolte6,
+//   ),
+//   errorWidget: (context, url, error) => Icon(Icons.error),
+// ),
               CircleAvatar
               (
                 backgroundImage: NetworkImage(data.image),
+              ),
+              SizedBox
+              (
+                width: 10,
               ),
               Text
               (
