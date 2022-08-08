@@ -179,15 +179,55 @@ class NotificationPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton
+                    PopupMenuButton<int>
                     (
-                      onPressed: (){}, 
-                      icon: Icon
-                      (
-                        Icons.person
-                      ),
-                      color: Colors.white,
+                      itemBuilder: (context) => 
+                      [
+                        PopupMenuItem
+                        (
+                          value: 1,
+                          child: Text
+                          (
+                            'Edit',
+                            style: TextStyle
+                            (
+                              color: Colors.black
+                            ),
+                          )
+                        ),
+                        PopupMenuItem
+                        (
+                          value: 2,
+                          child: Text
+                          (
+                            'Delete',
+                            style: TextStyle
+                            (
+                              color: Colors.black
+                            ),
+                          )
+                        )
+                      ],
+                      icon: Icon(Icons.library_add),
+                      offset: Offset(0, 50),
+                      onCanceled: ()
+                      {
+                        log('cancelled');
+                      },
+                      onSelected: (value)
+                      {
+                        log('value: $value');
+                      },
                     )
+                    // IconButton
+                    // (
+                    //   onPressed: (){}, 
+                    //   icon: Icon
+                    //   (
+                    //     Icons.person
+                    //   ),
+                    //   color: Colors.white,
+                    // )
                   ],
                 ),
               ),
