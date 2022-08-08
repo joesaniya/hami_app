@@ -8,6 +8,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:trading_demo/screen/NotificationPage.dart';
 import 'package:trading_demo/screen/homepage.dart';
 import 'package:trading_demo/screen/search.dart';
 import 'package:trading_demo/theme/appcolor.dart';
@@ -67,9 +68,10 @@ class _RootPageState extends State<RootPage> {
   List <Widget> pages = [
     Homepage(),
     Search(),
+    NotificationPage(),
     // Center(child: Text("Home",style: TextStyle(fontSize: 40),),),
     // Center(child: Text("Search",style: TextStyle(fontSize: 40),),),
-    Center(child: Text("Notifications",style: TextStyle(fontSize: 40),),),
+    // Center(child: Text("Notifications",style: TextStyle(fontSize: 40),),),
     Center(child: Text("Profile",style: TextStyle(fontSize: 40),),)
   ];
 
@@ -211,7 +213,7 @@ class _RootPageState extends State<RootPage> {
               }, 
               icon: Icon(FontAwesomeIcons.globe)
             ),
-            SizedBox(width: 20,),
+            // SizedBox(width: 20,),
             IconButton
             (
               onPressed: ()

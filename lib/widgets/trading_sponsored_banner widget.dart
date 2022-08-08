@@ -82,11 +82,12 @@ class _TradingAndSponsoredState extends State<TradingAndSponsored> {
                               ),
                             ),
                             Image.asset(
-                              banner[index].topImage,
+                              // banner[index].topImage,
+                              banner[index].imageBanner,
                               width: size.height * 0.05,
                               height: size.height * 0.06,
                               // height: size.height * 0.04,//optional
-                              color: Colors.deepPurpleAccent,
+                              // color: Colors.deepPurpleAccent,
                             ),
                           ],
                         ),

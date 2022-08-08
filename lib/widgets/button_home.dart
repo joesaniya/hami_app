@@ -159,12 +159,18 @@ class _ButtonHomeState extends State<ButtonHome> {
           (
             children: 
             [
-              Text
-              (
-                shift1.heading,
-                style: TextStyle
+              Container(
+                height: 20,
+                width: 40,
+                color:Colors.transparent,
+                child: Text
                 (
-                  color: Colors.white
+                  shift1.heading,
+                  style: TextStyle
+                  (
+                    color: Colors.white
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               SizedBox(
@@ -188,19 +194,29 @@ class _ButtonHomeState extends State<ButtonHome> {
                   )
                 ),
               ),
-              Spacer(),
-              Text
-              (
-                shift1.supply,
-                style: TextStyle
-                (
-                  color: Colors.white
-                ),
-              ),
               SizedBox
               (
-                width: 30,
+                width: 80,
+                // width:100
               ),
+              Container(
+                height: 20,
+                width: 40,
+                color:Colors.transparent,
+                child: Text
+                (
+                  shift1.supply,
+                  style: TextStyle
+                  (
+                    color: Colors.white
+                  ),
+                ),
+              ),
+              // SizedBox
+              // (
+              //   width: 30,
+              // ),
+              Spacer(),
               Container(
                 height: 30,
                 width: 60,

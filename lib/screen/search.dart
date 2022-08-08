@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:underline_indicator/underline_indicator.dart';
 
 import '../searchPage/search_company.dart';
 import '../searchPage/sponsored.dart';
@@ -27,6 +28,15 @@ class _SearchState extends State<Search> {
             constraints: BoxConstraints.expand(height: 50),
             child: TabBar
             (
+              indicator:UnderlineIndicator
+              (
+                strokeCap: StrokeCap.round,
+                borderSide: BorderSide
+                (
+                  color: Colors.pink,
+                  width: 4
+                )
+              ),
               tabs: 
               [
                 Tab

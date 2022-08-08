@@ -37,7 +37,7 @@ List<BannerModel> banner = <BannerModel>[
   BannerModel(
     title: 'Sponsored',
     subtitle:'Treding,Trading,Trading',
-    imageBanner: 'assets/images/trend1.png',
+    imageBanner: 'assets/images/sponsored_logo.png',
     topImage: 'assets/images/trend_logo.png',
     gradientColor:  LinearGradient(
       begin: Alignment.centerLeft,
@@ -51,7 +51,7 @@ List<BannerModel> banner = <BannerModel>[
   BannerModel(
     title: 'Spot Light',
     subtitle:'Treding,Trading,Trading',
-    imageBanner: 'assets/images/trend1.png',
+    imageBanner: 'assets/images/spot.png',
     topImage: 'assets/images/trend_logo.png',
     gradientColor:  LinearGradient(
       begin: Alignment.centerLeft,
