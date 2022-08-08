@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../searchPage/search_company.dart';
+import '../searchPage/sponsored.dart';
 
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
@@ -50,6 +51,7 @@ class _SearchState extends State<Search> {
                 children: 
                 [
                   SearchCompanies(),
+                  SponsoredTab()
                   // Container
                   // (
                   //   child: Center(
@@ -63,19 +65,19 @@ class _SearchState extends State<Search> {
                   //     ),
                   //   ),
                   // ),
-                  Container
-                  (
-                    child: Center(
-                      child: Text
-                      (
-                        'Sponsored',
-                        style: TextStyle
-                        (
-                          color: Colors.white
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Container
+                  // (
+                  //   child: Center(
+                  //     child: Text
+                  //     (
+                  //       'Sponsored',
+                  //       style: TextStyle
+                  //       (
+                  //         color: Colors.white
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ]
               ),
             )
