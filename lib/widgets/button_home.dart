@@ -35,12 +35,18 @@ class _ButtonHomeState extends State<ButtonHome> {
           (
             children: 
             [
-              Text
-              (
-                shift.heading,
-                style: TextStyle
+              Container(
+                height: 20,
+                width: 40,
+                color: Colors.transparent,
+                child: Text
                 (
-                  color: Colors.white
+                  shift.heading,
+                  style: TextStyle
+                  (
+                    color: Colors.white
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               SizedBox(
@@ -64,19 +70,45 @@ class _ButtonHomeState extends State<ButtonHome> {
                   )
                 ),
               ),
-              Spacer(),
-              Text
-              (
-                shift.supply,
-                style: TextStyle
-                (
-                  color: Colors.white
-                ),
-              ),
+              // Spacer(),
               SizedBox
               (
-                width: 30,
+                width: 10,
               ),
+              Container(
+              height: 30,
+              width: 60,
+              decoration: BoxDecoration
+              (
+                color: Colors.transparent,
+                borderRadius: BorderRadius.all(Radius.circular(5))
+              ),
+              child: Center(
+                child: Text
+                (
+                  shift.supply,
+                  style: TextStyle
+                  (
+                    color: Colors.white
+                  ),
+                ),
+              ),
+              ),
+              // Expanded(
+              //   child: Text
+              //   (
+              //     shift.supply,
+              //     style: TextStyle
+              //     (
+              //       color: Colors.white
+              //     ),
+              //   ),
+              // ),
+              // SizedBox
+              // (
+              //   width: 30,
+              // ),
+              Spacer(),
               Container(
                 height: 30,
                 width: 60,
@@ -305,36 +337,68 @@ class _ButtonHomeState extends State<ButtonHome> {
                   (
                     children: 
                     [
-                      Text
-                      (
-                        'TOKEN NAME',
-                        style: TextStyle
-                        (
-                          color: Colors.grey
+                      Expanded(
+                        child: FittedBox(
+                          child: Text
+                          (
+                            'TOKEN NAME',
+                            style: TextStyle
+                            (
+                              color: Colors.grey
+                            ),
+                          ),
                         ),
                       ),
-                      Spacer
-                      (
+                      // Spacer
+                      // (
 
+                      // ),
+                       SizedBox
+                    (
+                      width: 20,
+                    ),
+                      Expanded(
+                        child: FittedBox(
+                          child: Text
+                          (
+                            'TOKEN SUPPLY',
+                            style: TextStyle
+                            (
+                              color: Colors.grey
+                            ),
+                          ),
+                        ),
                       ),
-                      Text
-                      (
-                        'TOKEN SUPPLY',
-                        style: TextStyle
-                        (
-                          color: Colors.grey
+                       SizedBox
+                    (
+                      width: 20,
+                    ),
+                      Expanded(
+                        child: FittedBox(
+                          child: Text
+                          (
+                            'TOKEN TYPE',
+                            style: TextStyle
+                            (
+                              color: Colors.grey
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox
                     (
                       width: 10,
                     ),
-                      Text
-                      (
-                        'TOKEN TYPE',
-                        style: TextStyle
-                        (
-                          color: Colors.grey
+                      Expanded(
+                        child: FittedBox(
+                          child: Text
+                          (
+                            'VIEW TOKEN',
+                            style: TextStyle
+                            (
+                              color: Colors.grey
+                            ),
+                          ),
                         ),
                       ),
                     ],
