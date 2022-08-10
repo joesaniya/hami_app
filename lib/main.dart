@@ -87,8 +87,8 @@ class _RootPageState extends State<RootPage> {
     // Search(),->tab
     SearchScreen(),
     NotificationPage(),
-    AlertScreen()
-    // AlertPage()
+    // AlertScreen()
+    AlertPage()
   ];
 
   final _advancedDrawerController = AdvancedDrawerController();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trading_demo/screen/AlertScreen.dart';
 import 'package:trading_demo/theme/appcolor.dart';
 import 'package:underline_indicator/underline_indicator.dart';
 
@@ -15,6 +16,8 @@ class AlertPage extends StatefulWidget {
 class _AlertPageState extends State<AlertPage> {
   // var size = MediaQuery.of(context).size;
   bool _flag = true;
+
+  String _tabbed='1';
 
   // bool _flag1 = true;
   // bool _flag2 = true;
@@ -46,7 +49,8 @@ class _AlertPageState extends State<AlertPage> {
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
-                              _flag = !_flag;
+                              // _flag = !_flag;
+                              _tabbed = '1';
                             });
                           },
                           child: Padding(
@@ -55,7 +59,7 @@ class _AlertPageState extends State<AlertPage> {
                               width: MediaQuery.of(context).size.width,
                               height: MediaQuery.of(context).size.height * 0.06,  
                                decoration: BoxDecoration(
-                                  color: _flag ? Appcolor.background:Colors.transparent,
+                                  color: _tabbed=='1' ? Appcolor.background:Colors.transparent,
                                   borderRadius: BorderRadius.all(Radius.circular(10))
                                   
                                 ),
@@ -68,7 +72,7 @@ class _AlertPageState extends State<AlertPage> {
                                     fontFamily: 'PT Sans',
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
-                                    color: _flag?Colors.white:Colors.pinkAccent,
+                                    color: _tabbed=='1'?Colors.white:Colors.pinkAccent,
                                   ),
                                 )
                               ),
@@ -82,7 +86,8 @@ class _AlertPageState extends State<AlertPage> {
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
-                              _flag = !_flag;
+                              // _flag = !_flag;
+                              _tabbed='2';
                             });
                           },
                           child: Padding(
@@ -91,7 +96,8 @@ class _AlertPageState extends State<AlertPage> {
                               width: MediaQuery.of(context).size.width,
                               height: MediaQuery.of(context).size.height * 0.06,  
                                decoration: BoxDecoration(
-                                  color: _flag ? Appcolor.background:Colors.transparent,
+                                color: _tabbed=='2' ? Appcolor.background:Colors.transparent,
+                                  // color: _flag ? Appcolor.background:Colors.transparent,
                                   borderRadius: BorderRadius.all(Radius.circular(10))
                                   
                                 ),
@@ -104,7 +110,7 @@ class _AlertPageState extends State<AlertPage> {
                                     fontFamily: 'PT Sans',
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
-                                    color: _flag?Colors.white:Colors.pinkAccent,
+                                    color: _tabbed=='2'?Colors.white:Colors.pinkAccent,
                                   ),
                                 )
                               ),
@@ -116,7 +122,8 @@ class _AlertPageState extends State<AlertPage> {
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
-                              _flag = !_flag;
+                              // _flag = !_flag;
+                              _tabbed='3';
                             });
                             // buildLastJob(Pay[]);
 
@@ -127,7 +134,7 @@ class _AlertPageState extends State<AlertPage> {
                               width: MediaQuery.of(context).size.width,
                               height: MediaQuery.of(context).size.height * 0.06,  
                                decoration: BoxDecoration(
-                                  color: _flag ? Colors.transparent : Appcolor.background,
+                                  color: _tabbed=='3' ? Appcolor.background: Colors.transparent,
                                   borderRadius: BorderRadius.all(Radius.circular(10))
                                   
                                 ),
@@ -140,7 +147,7 @@ class _AlertPageState extends State<AlertPage> {
                                     fontFamily: 'PT Sans',
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
-                                    color: _flag?Colors.pinkAccent:Colors.white
+                                    color: _tabbed=='3'?Colors.white:Colors.pinkAccent,
                                   ),
                                 )
                               ),
@@ -159,7 +166,8 @@ class _AlertPageState extends State<AlertPage> {
 
               SingleChildScrollView
               (
-                child: _flag ? SearchCompanies():SponsoredTab()
+                // child: _flag ? SearchCompanies():SponsoredTab()
+                child: _tabbed=='1' ? SearchCompanies():_tabbed=='2' ? SponsoredTab():SearchCompanies(),
               )
         ],
       ),
