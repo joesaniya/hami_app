@@ -8,8 +8,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:trading_demo/screen/AlertScreen.dart';
 import 'package:trading_demo/screen/NotificationPage.dart';
+import 'package:trading_demo/screen/alerts.dart';
 import 'package:trading_demo/screen/homepage.dart';
+import 'package:trading_demo/screen/search-screen.dart';
 import 'package:trading_demo/screen/search.dart';
 import 'package:trading_demo/theme/appcolor.dart';
 import 'package:line_icons/line_icons.dart';
@@ -44,35 +47,48 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  List <BottomNavigationBarItem>items = const [
-    BottomNavigationBarItem
-    (
-      icon: Icon(LineIcons.home,size: 27,),
-      label: 'home'
-    ),
-    BottomNavigationBarItem(icon: Icon(LineIcons.search,size: 27,),
-    label: 'search'
-    // title:Padding(
-    //   padding: const EdgeInsets.only(top: 8),
-    //   child: Text("Search",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w500),),
-    // )
-    ),
-    BottomNavigationBarItem(icon: Icon(LineIcons.bell,size: 27),
-    label: 'notifications'
-    ),
-    BottomNavigationBarItem(icon: Icon(Icons.alarm,size: 27),
-    label: 'Alerts'
-    )
-  ];
+  // List <BottomNavigationBarItem>items = [
+  //   BottomNavigationBarItem
+  //   (
+  //     icon: SvgPicture.asset
+  //     (
+  //       'assets/icons/home-filled.svg', 
+  //         color: Colors.pinkAccent
+  //     ), 
+  //     label: 'Home'
+  //   ),
+  //   // BottomNavigationBarItem
+  //   // (
+  //   //   icon: Icon
+  //   //   (
+  //   //     LineIcons.home,
+  //   //     size: 27,
+  //   //   ),
+      
+  //   //   label: 'home'
+  //   // ),
+  //   BottomNavigationBarItem(icon: Icon(LineIcons.search,size: 27,),
+  //   label: 'search'
+  //   // title:Padding(
+  //   //   padding: const EdgeInsets.only(top: 8),
+  //   //   child: Text("Search",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w500),),
+  //   // )
+  //   ),
+  //   BottomNavigationBarItem(icon: Icon(LineIcons.bell,size: 27),
+  //   label: 'notifications'
+  //   ),
+  //   BottomNavigationBarItem(icon: Icon(Icons.alarm,size: 27),
+  //   label: 'Alerts'
+  //   )
+  // ];
   int selectedIndex = 0;
   List <Widget> pages = [
     Homepage(),
-    Search(),
+    // Search(),->tab
+    SearchScreen(),
     NotificationPage(),
-    // Center(child: Text("Home",style: TextStyle(fontSize: 40),),),
-    // Center(child: Text("Search",style: TextStyle(fontSize: 40),),),
-    // Center(child: Text("Notifications",style: TextStyle(fontSize: 40),),),
-    Center(child: Text("Profile",style: TextStyle(fontSize: 40),),)
+    AlertScreen()
+    // AlertPage()
   ];
 
   final _advancedDrawerController = AdvancedDrawerController();
@@ -221,10 +237,19 @@ class _RootPageState extends State<RootPage> {
                 log('companyicon');
                 DialogHelper.exit(context);
               }, 
-              icon: Icon(FontAwesomeIcons.connectdevelop)
+              icon: Icon(FontAwesomeIcons.wallet)
             ),
             // Icon(FontAwesomeIcons.connectdevelop,),
-            SizedBox(width: 20,),
+            // SizedBox(width: 20,),
+            IconButton
+            (
+              onPressed: ()
+              {
+                log('Profile Page Clicked');
+                // DialogHelper.exit(context);
+              }, 
+              icon: Icon(LineIcons.user)
+            ),
            ],
         ),
       ),
@@ -241,32 +266,66 @@ class _RootPageState extends State<RootPage> {
           selectedItemColor:Colors.pinkAccent.shade200,
           backgroundColor: Appcolor.darkviolte6,
           // selectedIconTheme: Theme.of(context).copyWith(),
-                items: items,
+                // items: items,
                 onTap: (index){
                   setState(() {
         selectedIndex = index;
                   });
                 },
-              //   items: [
-              // (selectedIndex == 0)
-              //     ? BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/home-filled.svg', color: Colors.pinkAccent), label: 'Home')
-              //     : BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/home.svg', color: Colors.grey[600]), label: 'Home'),
-              // (selectedIndex == 1)
-              //     ? BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/discover-filled.svg', color: Colors.pinkAccent, height: 28, width: 26), label: 'Search')
-              //     : BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/discover.svg', color: Colors.grey[600], height: 28, width: 26), label: 'Search'),
-              // (selectedIndex == 2)
-              //     ? BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/bookmark-filled.svg', color: Colors.pinkAccent), label: 'Notifications')
-              //     : BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/bookmark.svg', color: Colors.grey[600]), label: 'Notifications'),
-              // (selectedIndex == 3)
-              //     ? BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/bookmark-filled.svg', color: Colors.pinkAccent), label: 'Alerts')
-              //     : BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/bookmark.svg', color: Colors.grey[600]), label: 'Alerts'),
-              //   ],
+                items: [
+              (selectedIndex == 0)
+                  ? BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/home-filled.svg', color: Colors.pinkAccent), label: 'Home')
+                  : BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/home.svg', color: Colors.grey[600]), label: 'Home'),
+              (selectedIndex == 1)
+                  ? BottomNavigationBarItem
+                  (
+                    icon: SvgPicture.asset('assets/icons/search-filled.svg', color: Colors.pinkAccent, height: 28, width: 26), 
+                    // icon: Icon(LineIcons.search,color: Colors.pinkAccent,size: 27,),
+                    label: 'Search'
+                  )
+                  : BottomNavigationBarItem
+                  (
+                    icon: Icon(LineIcons.search,color: Colors.grey[600],size: 27,),
+                    // icon: SvgPicture.asset('assets/icons/home-filled.svg', color: Colors.grey[600], height: 28, width: 26), 
+                    label: 'Search'
+                  ),
+              (selectedIndex == 2)
+                  ? BottomNavigationBarItem
+                  (
+                    // icon: Image.asset('assets/images/notifications-filled.png',height: 28,width: 26,color: Colors.pinkAccent,),
+                    icon: Icon(LineIcons.bell,color: Colors.pinkAccent,size: 27,),
+                    // icon: SvgPicture.asset('assets/icons/home-filled.svg', color: Colors.pinkAccent), 
+                    label: 'Notifications'
+                  )
+                  : BottomNavigationBarItem
+                  (
+                    // icon: Image.asset('assets/images/notifications.png',height: 28,width: 26,color: Colors.grey[600],),
+                    icon: Icon(LineIcons.bell,color: Colors.grey[600],size: 27,),
+                    // icon: SvgPicture.asset('assets/icons/home-filled.svg', color: Colors.grey[600]), 
+                    label: 'Notifications'
+                  ),
+              (selectedIndex == 3)
+                  ? BottomNavigationBarItem
+                  (
+                    icon: Image.asset('assets/images/alerts-fillled.png',height: 28,width: 26,color: Colors.pinkAccent,),
+                    // icon: Icon(Icons.alarm,color: Colors.pinkAccent,size: 27,),
+                    // icon: SvgPicture.asset('assets/icons/home-filled.svg', color: Colors.pinkAccent), 
+                    label: 'Alerts'
+                  )
+                  : BottomNavigationBarItem
+                  (
+                    icon: Image.asset('assets/images/alerts.png',height: 28,width: 26,color: Colors.grey[600],),
+                    // icon: Icon(Icons.alarm,color: Colors.grey[600],size: 27,),
+                    // icon: SvgPicture.asset('assets/icons/home-filled.svg', color: Colors.grey[600]), 
+                    label: 'Alerts'
+                  ),
+                ],
                 
                 // selectedItemColor: Appcolor.darkviolte4,
                 unselectedItemColor: Colors.grey,
                 showUnselectedLabels: true,
                 currentIndex: selectedIndex,
-                type: BottomNavigationBarType.shifting,
+                type: BottomNavigationBarType.fixed,
               ),
       ),
     )

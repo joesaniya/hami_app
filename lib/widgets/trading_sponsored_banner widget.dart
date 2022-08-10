@@ -48,9 +48,9 @@ class _TradingAndSponsoredState extends State<TradingAndSponsored> {
                           banner[index].title,
                           style: TextStyle
                           (
-                            fontSize: 18,
+                            fontSize: 15,
                             color: Colors.white,
-                            fontWeight: FontWeight.w900
+                            fontWeight: FontWeight.w500
                           ),
                         ),
                       ),
@@ -75,8 +75,8 @@ class _TradingAndSponsoredState extends State<TradingAndSponsored> {
                                 style: TextStyle
                                 (
                                   fontSize: 15,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w300
                                 ),
                                 maxLines: 3,
                               ),

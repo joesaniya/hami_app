@@ -31,6 +31,7 @@ class _ButtonHomeState extends State<ButtonHome> {
           height: 40,
           width: double.infinity,
           color: Colors.transparent,
+          
           child: Row
           (
             children: 
@@ -111,11 +112,16 @@ class _ButtonHomeState extends State<ButtonHome> {
               Spacer(),
               Container(
                 height: 30,
-                width: 60,
+                width: 40,
                 decoration: BoxDecoration
                 (
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.all(Radius.circular(5))
+                  // color: Colors.pinkAccent,
+                  color: shift.status=='Standard'?Colors.pinkAccent: Colors.grey,
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  border: Border.all
+                  (
+                    color: Appcolor.darkviolte3
+                  )
                 ),
                 child: Center(
                   child: Text

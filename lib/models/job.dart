@@ -26,7 +26,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      "Accepted"
+      "Standard"
     ),
     Shift
     (
@@ -38,7 +38,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'Accepted'
+      'Standard'
     ),
     Shift
     (
@@ -50,7 +50,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'Accepted'
+      'Premeium'
     ),
     Shift
     (
@@ -62,7 +62,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'pending'
+      'Standard'
     ),
     Shift
     (
@@ -74,7 +74,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'pending'
+      'premeium'
     ),
     Shift
     (
@@ -86,7 +86,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'pending'
+      'premeium'
     ),
     Shift
     (
@@ -98,7 +98,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'pending'
+      'premeium'
     ),
     Shift
     (
@@ -110,7 +110,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'pending'
+      'premeium'
     ),
     Shift
     (
@@ -122,7 +122,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'pending'
+      'premeium'
     ),
     Shift
     (
@@ -134,7 +134,7 @@ List<Shift> getShift()
       "Jul 29",
       "3pm-11pm",
       "15.00",
-      'pending'
+      'Standard'
     ),
   ];
 }
